@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/viniciusfeitosa/rubyconf/app_server_human/models"
+	"github.com/viniciusfeitosa/TalkRubyConf/app_server_human/models"
 )
 
 func PostHuman(w http.ResponseWriter, r *http.Request) {

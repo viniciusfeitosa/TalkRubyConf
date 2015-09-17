@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/viniciusfeitosa/rubyconf/app_server_hero/models"
+	"github.com/viniciusfeitosa/TalkRubyConf/app_server_hero/models"
 )
 
 func PostHero(w http.ResponseWriter, r *http.Request) {

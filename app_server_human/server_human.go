@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/viniciusfeitosa/rubyconf/app_server_human/handlers"
+	"github.com/viniciusfeitosa/TalkRubyConf/app_server_human/handlers"
 )
 
 const (

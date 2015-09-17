@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/viniciusfeitosa/rubyconf/app_server_hero/configs"
+	"github.com/viniciusfeitosa/TalkRubyConf/app_server_hero/configs"
 	"gopkg.in/mgo.v2/bson"
 )
 

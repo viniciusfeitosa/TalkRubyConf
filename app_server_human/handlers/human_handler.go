@@ -14,18 +14,20 @@ func PostHuman(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "It isn't a POST", http.StatusForbidden)
 	}
 
-	var human models.Human
-	if err := json.NewDecoder(r.Body).Decode(&human); err != nil {
+	var humans []models.Human
+	if err := json.NewDecoder(r.Body).Decode(&humans); err != nil {
 		log.Println(err.Error())
 		http.Error(w, err.Error(), http.StatusBadRequest)
 	}
 
-	if err := models.CreateHuman(human); err != nil {
+	if err := models.CreateHuman(humans); err != nil {
 		log.Println(err.Error())
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 
-	log.Printf("New human %s created", human.Name)
+	for _, human := range humans {
+		log.Printf("New human %s created", human.Name)
+	}
 	w.WriteHeader(http.StatusCreated)
 }
 

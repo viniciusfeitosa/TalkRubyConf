@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Bruce Wayne",
+        "born": "Gotham City",
+        "ocupation": "Rich",
+        "external_id": 1
+    },
+    {
+        "name": "Peter Parker",
+        "born": "New York",
+        "ocupation": "Photographer",
+        "external_id": 2
+    },
+    {
+        "name": "Chuck Norris",
+        "born": "Oklahoma",
+        "ocupation": "Actor",
+        "external_id": 3
+    }
+]

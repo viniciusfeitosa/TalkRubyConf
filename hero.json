@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Batman",
+        "born": "Gotham City",
+        "ocupation": "Dark Night",
+        "external_id": 1
+    },
+    {
+        "name": "Spiderman",
+        "born": "New York",
+        "ocupation": "New Avanger",
+        "external_id": 2
+    },
+    {
+        "name": "Chuck Norris",
+        "born": "Oklahoma",
+        "ocupation": "The Myth",
+        "external_id": 3
+    }
+]

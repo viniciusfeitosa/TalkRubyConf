@@ -5,43 +5,45 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/viniciusfeitosa/rubyconf/app_server_human/models"
+	"github.com/viniciusfeitosa/rubyconf/app_server_hero/models"
 )
 
-func PostHuman(w http.ResponseWriter, r *http.Request) {
+func PostHero(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		log.Println("It isn't a POST")
 		http.Error(w, "It isn't a POST", http.StatusForbidden)
 	}
 
-	var human models.Human
-	if err := json.NewDecoder(r.Body).Decode(&human); err != nil {
+	var heros []models.Hero
+	if err := json.NewDecoder(r.Body).Decode(&heros); err != nil {
 		log.Println(err.Error())
 		http.Error(w, err.Error(), http.StatusBadRequest)
 	}
 
-	if err := models.CreateHuman(human); err != nil {
+	if err := models.CreateHero(heros); err != nil {
 		log.Println(err.Error())
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 
-	log.Printf("New human %s created", human.Name)
+	for _, hero := range heros {
+		log.Printf("New hero %s created", hero.Name)
+	}
 	w.WriteHeader(http.StatusCreated)
 }
 
-func GetAllHumans(w http.ResponseWriter, r *http.Request) {
+func GetAllHeros(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
 		log.Println("It isn't a GET")
 		http.Error(w, "It isn't a GET", http.StatusForbidden)
 	}
 
-	humans, err := models.FindAllHumans()
+	heros, err := models.FindAllHeros()
 	if err != nil {
 		log.Println(err.Error())
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 
-	js, err := json.Marshal(humans)
+	js, err := json.Marshal(heros)
 	if err != nil {
 		log.Println(err.Error())
 		http.Error(w, err.Error(), http.StatusInternalServerError)

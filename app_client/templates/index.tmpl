@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="Site simples para GoInRIO">
+        <meta name="author" content="Vinicius Pacheco">
+        <!-- <link rel="icon" href="/favicon.ico"> -->
+        <title>GoInRIO</title>
+        <!-- Normalize browser -->
+        <link href="/static/css/normalize.css" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="/static/css/jumbotron.css" rel="stylesheet">
+        <link href="/static/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">RubyConf 2015</a>
+                </div>
+            </div>
+        </nav>
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Veja quem são nossos super heróis!</h1>
+                <p>Essa é uma simples app para mostra um pouco do que você pode fazer com Go </p>
+                <div class="col-md-8">
+                    <h2>Lista de Heróis</h2>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td><b>Herói</b></td>
+                            <td><b>Disfarce</b></td>
+                        </tr>
+                        {{range $i, $l := .Lista}}
+                        <tr>
+                            <td>{{$l.Hero.Name}}</td>
+                            <td>{{$l.Ego.Name}}</td>
+                        </tr>
+                        {{end}}
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <hr>
+            <footer>
+                <p>&copy; RubyConf 2015</p>
+            </footer>
+        </div> <!-- /container -->
+            <!-- Bootstrap core JavaScript
+            ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+        <script src="/static/js/jquery-2.1.4.min.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+.jumbotron{
+    
+    background-repeat: no-repeat;
+    background-size: 300px;
+    background-position: 90% -25%;
+
+}
+
+.table-bordered tbody tr td {
+    vertical-align: text-top;
+}

@@ -90,6 +90,11 @@ Instrutor na Caelum
 
 * Demo 1
 
+- Fibonacci de 10
+- Com escrita de texto
+- 2 threads 64 connections em 10 Seg
+- wrk -c 64 -d 10s http://localhost:PORT/10
+
 * Foi assim que chegamos em Go
 
 .image images/go1.jpg _ 900
@@ -102,11 +107,24 @@ Instrutor na Caelum
 
 * Goroutines
 
+.image images/goroutines.png
+
+* Goroutines
+
 .play code/goroutines.go
 
 * Channels
 
 .play code/channels.go
+
+* Testing
+
+- func TestXxx(*testing.T)
+- func BenchmarkXxx(*testing.B)
+
+* HTTP test
+
+.play code/httptest/main.go
 
 * Demo 2
 

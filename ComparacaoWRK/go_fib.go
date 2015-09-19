@@ -4,14 +4,12 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"runtime"
 	"strconv"
 
 	"github.com/julienschmidt/httprouter"
 )
 
 func main() {
-	runtime.GOMAXPROCS(runtime.NumCPU())
 	mux := httprouter.New()
 	mux.GET("/:number", indexHandle)
 
